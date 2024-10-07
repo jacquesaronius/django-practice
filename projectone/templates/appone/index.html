@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Users App</title>
+    </head>
+    <body>
+        <h1>Users</h1>
+        {% if users %}
+            <table border="2" style="text-align: left">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                </thead>
+                <tbody>
+                    {% for i in users %}
+                        <tr>
+                            <td>{{ i.first_name }}</td>
+                            <td>{{ i.last_name }}</td>
+                            <td>{{ i.email }}</td>
+                        </tr>    
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h2>No users found</h2>
+        {% endif %}
+    </body>
+</html>
